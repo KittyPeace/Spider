@@ -6,6 +6,9 @@ import os
 from urllib.parse import urljoin
 
 scel_dir = 'scel_dicts'
+if not os.path.exists(scel_dir):
+    os.makedirs(scel_dir)
+
 base_url = "https://pinyin.sogou.com/dict/"
 res = requests.get(base_url)
 text = res.text
